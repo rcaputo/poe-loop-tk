@@ -9,7 +9,7 @@ $VERSION = '1.304'; # NOTE - Should be #.### (three decimal places)
 use POE::Loop::PerlSignals;
 use POE::Loop::TkCommon;
 
-use Tk 800.021;
+use Tk 800.031;
 use 5.00503;
 
 =for poe_tests
@@ -211,7 +211,15 @@ POE::Loop::Tk - a bridge that allows POE to be driven by Tk
 
 See L<POE::Loop>.
 
+  use Tk;
+  use POE;
+
+  # Rest of your program here.
+
 =head1 DESCRIPTION
+
+POE::Loop::Tk replaces POE's internal event loop with the Tk module.
+This allows programs to use both POE and Tk at the same time.
 
 POE::Loop::Tk implements the interface documented in L<POE::Loop>.
 Therefore it has no documentation of its own.  Please see L<POE::Loop>
@@ -221,7 +229,7 @@ POE::Loop::Tk is one of two versions of the Tk event loop bridge.  The
 other, L<POE::Loop::TkActiveState> accommodates behavior differences
 in ActiveState's build of Tk.  Both versions share common code in
 L<POE::Loop::TkCommon>.  POE::Loop::Tk dynamically selects the
-appropriate bridge code based on the runtime environment.
+appropriate event loop bridge based on the runtime environment.
 
 =head1 SEE ALSO
 
@@ -230,8 +238,9 @@ L<POE::Loop::PerlSignals>.
 
 =head1 AUTHORS & LICENSING
 
-Please see L<POE> for more information about authors, contributors,
-and POE's licensing.
+POE::Loop::Tk is Copyright 1998-2013 Rocco Caputo.  All rights
+reserved.  POE::Loop::Tk is free software; you may redistribute it
+and/or modify it under the same terms as Perl itself.
 
 =cut
 
