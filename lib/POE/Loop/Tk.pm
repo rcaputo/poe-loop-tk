@@ -13,7 +13,6 @@ use Tk 800.031;
 use 5.00503;
 
 =for poe_tests
-
 sub skip_tests {
   return "Tk needs a DISPLAY (set one today, okay?)" unless (
     (defined $ENV{DISPLAY} and length $ENV{DISPLAY}) or $^O eq "MSWin32"
