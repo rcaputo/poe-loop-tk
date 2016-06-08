@@ -22,6 +22,9 @@ sub skip_tests {
   if ($test_name eq "k_signals_rerun" and $^O eq "MSWin32") {
     return "This test crashes Perl when run with Tk on $^O";
   }
+  if ($test_name eq 'wheel_tail' and $^O eq "MSWin32") {
+    return "$test_name tests hang on $^O";    
+  }
   return "Tk tests require the Tk module" if do { eval "use Tk"; $@ };
   my $m = eval { Tk::MainWindow->new() };
   if ($@) {
